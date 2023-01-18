@@ -25,7 +25,7 @@ public class HrmGeneral extends HrmGlobal {
     }
 
     public void loginintoapp(String sheetname) throws Exception {
-        FileInputStream UserFile = new FileInputStream("/Users/prakash/IdeaProjects/orangehrmlive/Users.xls");
+        FileInputStream UserFile = new FileInputStream("./Users.xls");
         userwb = Workbook.getWorkbook(UserFile);
         Sheet s2 = userwb.getSheet(sheetname);
         int rows = s2.getRows();
@@ -61,7 +61,7 @@ public class HrmGeneral extends HrmGlobal {
     }
 
     public void addUser(String sheetname) throws Exception {
-        FileInputStream UserFile = new FileInputStream("/Users/prakash/IdeaProjects/orangehrmlive/Users.xls");
+        FileInputStream UserFile = new FileInputStream("./Users.xls");
         userwb = Workbook.getWorkbook(UserFile);
         Sheet s3 = userwb.getSheet(sheetname);
         int rows = s3.getRows();
@@ -129,7 +129,7 @@ public class HrmGeneral extends HrmGlobal {
 
 
     public Object[][] getData(String sheetname) throws Exception {
-        FileInputStream UserFile = new FileInputStream("/Users/prakash/IdeaProjects/orangehrmlive/Users.xls");
+        FileInputStream UserFile = new FileInputStream("./Users.xls");
         Workbook userwb = Workbook.getWorkbook(UserFile);
         Sheet sheet = userwb.getSheet(sheetname);
         int rows = sheet.getRows();
