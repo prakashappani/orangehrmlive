@@ -9,7 +9,6 @@ public class General  extends Global
 	public void openBrowser()
 	{
 		System.setProperty("Webdriver.chrome.driver", "C:\\Selenium\\chrome.exe");
-
 		D1 = new ChromeDriver();
 		D1.get(url);
 		
