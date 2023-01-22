@@ -9,7 +9,9 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.WebElement;
 
 import java.io.FileInputStream;
+import java.util.List;
 
+import org.openqa.selenium.support.ui.Select;
 
 public class HrmGeneral extends HrmGlobal {
     public void openBrowser() {
@@ -99,13 +101,12 @@ public class HrmGeneral extends HrmGlobal {
         act.keyDown(Keys.TAB).perform();
         Thread.sleep(2000);
 
-        WebElement element = driver.findElement(By.xpath(eNamepath));
-        element.sendKeys(empname);
-        act.keyDown(Keys.ARROW_DOWN).release().perform();
+        WebElement element1 = driver.findElement(By.xpath(eNamepath));
+        element1.sendKeys(empname);
+        Thread.sleep(2000);
 
-
-        Thread.sleep(5000);
-//        act.keyDown(Keys.ARROW_DOWN).perform();
+        driver.findElement(By.xpath(eNamepathDropdownPath)).click();
+        Thread.sleep(2000);
 
         driver.findElement(By.xpath(statpath)).click();
         Thread.sleep(2000);

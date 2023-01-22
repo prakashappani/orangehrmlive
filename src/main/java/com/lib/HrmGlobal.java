@@ -35,6 +35,7 @@ public class HrmGlobal {
     //objects AddUser
     public String userRolepath = "//body/div[@id='app']/div[1]/div[2]/div[2]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]";
     public String eNamepath  = "//*[text()='Employee Name']//following::input[1]";
+    public String eNamepathDropdownPath  = "//div[@class='oxd-autocomplete-dropdown --positon-bottom']";
     public String statpath = "//body/div[@id='app']/div[1]/div[2]/div[2]/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]";
     public String userNamePath = "//*[text()='Username']//following::input[1]";
     public String passWordpath = "//*[text()='Password']//following::input[1]";

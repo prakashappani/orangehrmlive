@@ -59,8 +59,8 @@ public class Tc02 {
     }
 
     @Test(dependsOnMethods = {"admintabTest"})
-    public void addUserTest1() throws Exception {
-        hrmGeneral.addUser("Admin", "Paul Collings ", "Enabled", "pappani", "Abcd_1234", "Abcd_1234");
+    public void addOneUserTest() throws Exception {
+        hrmGeneral.addUser("Admin", "Paul Collings", "Enabled", "pappani", "Abcd_1234", "Abcd_1234");
         ;
     }
 
