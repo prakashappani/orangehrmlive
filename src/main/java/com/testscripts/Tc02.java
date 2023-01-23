@@ -20,14 +20,14 @@ public class Tc02 {
 
     @Test
     public void negativeTest() throws Exception {
+        hrmGeneral.openBrowser();
         hrmGeneral.loginintoapp("Negative");
     }
 
-    @Test
+    @Test (dependsOnMethods = "negativeTest")
     public void positiveTest() throws Exception {
         hrmGeneral.loginintoapp("Positive");
         Thread.sleep(5000);
-        hrmGeneral.logout();
     }
 
     @Test
@@ -36,13 +36,11 @@ public class Tc02 {
         Thread.sleep(5000);
         hrmGeneral.admintab();
         hrmGeneral.addUser("Admin");
-        //Gn.logout();
     }
 
-    @Test
+    @Test (priority = 9)
     public void admintabTest() throws Exception {
-        hrmGeneral.loginintoapp("Positive");
-        Thread.sleep(5000);
+         Thread.sleep(5000);
         hrmGeneral.admintab();
     }
 
