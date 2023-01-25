@@ -76,18 +76,11 @@ public class HrmGeneral extends HrmGlobal {
             Passwd = s3.getCell(4, i).getContents();
             Confirmpwd = s3.getCell(5, i).getContents();
 
-            System.out.print(urole + "\t");
-            System.out.print(empname + "\t");
-            System.out.print(status + "\t");
-            System.out.print(userName + "\t");
-            System.out.print(Passwd + "\t");
-            System.out.print(Confirmpwd + "\t");
 
             addUser(urole, empname, status, userName, Passwd, Confirmpwd);
 
         }
     }
-
     public void addUser(String urole, String empname, String status, String uName, String Passwd, String Confirmpwd) throws Exception {
         Thread.sleep(2000);
         driver.findElement(By.xpath(userRolepath)).click();

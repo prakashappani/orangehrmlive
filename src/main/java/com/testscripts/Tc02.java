@@ -20,7 +20,6 @@ public class Tc02 {
 
     @Test
     public void negativeTest() throws Exception {
-        hrmGeneral.openBrowser();
         hrmGeneral.loginintoapp("Negative");
     }
 
@@ -30,18 +29,20 @@ public class Tc02 {
         Thread.sleep(5000);
     }
 
-    @Test
-    public void addUserTest() throws Exception {
-        hrmGeneral.loginintoapp("Positive");
-        Thread.sleep(5000);
+
+    @Test (dependsOnMethods = "positiveTest")
+    public void admintabTest() throws Exception {
         hrmGeneral.admintab();
+    }
+
+    @Test (dependsOnMethods = "admintabTest")
+    public void addUserTest() throws Exception {
         hrmGeneral.addUser("Admin");
     }
 
-    @Test (priority = 9)
-    public void admintabTest() throws Exception {
-         Thread.sleep(5000);
-        hrmGeneral.admintab();
+    @Test(dependsOnMethods = {"admintabTest"})
+    public void addOneUserTest() throws Exception {
+        hrmGeneral.addUser("Admin", "Paul Collings", "Enabled", "pappani", "Abcd_1234", "Abcd_1234");
     }
 
     /*
@@ -60,12 +61,6 @@ public class Tc02 {
     @Test(dataProvider = "createUsers", dependsOnMethods = {"admintabTest"})
     public void addUsersTest(String urole, String empname, String status, String userName, String Passwd, String Confirmpwd) throws Exception {
         hrmGeneral.addUser(urole, empname, status, userName, Passwd, Confirmpwd);
-    }
-
-
-    @Test(dependsOnMethods = {"admintabTest"})
-    public void addOneUserTest() throws Exception {
-        hrmGeneral.addUser("Admin", "Paul Collings", "Enabled", "pappani", "Abcd_1234", "Abcd_1234");
     }
 
     /*
