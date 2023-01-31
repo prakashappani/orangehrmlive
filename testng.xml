@@ -10,6 +10,7 @@
                     <include name="admintabTest"/>
                     <include name="addOneUserTest"/>
                     <include name="addUserTest"/>
+                    <include name="addUsersTest"/>
                 </methods>
             </class>
         </classes>

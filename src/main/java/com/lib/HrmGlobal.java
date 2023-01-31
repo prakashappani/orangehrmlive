@@ -18,9 +18,7 @@ public class HrmGlobal {
     public String Passwd;
     public String Confirmpwd;
 
-
 //Objects
-
 
     public String txtun = "//input[@name='username']";
     public String txtpwd = "//input[@name='password']";
@@ -34,14 +32,14 @@ public class HrmGlobal {
 
     //objects AddUser
     public String userRolepath = "//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div/form/div[1]/div/div[1]/div/div[2]/div/div";
+    public String selectionPath = "//span[contains(text(),'%s')]";
     public String eNamepath  = "//*[text()='Employee Name']//following::input[1]";
     public String eNamepathDropdownPath  = "//div[@class='oxd-autocomplete-dropdown --positon-bottom']";
     public String statpath = "//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div/form/div[1]/div/div[3]/div/div[2]/div/div/div[2]/i";
     public String userNamePath = "//*[text()='Username']//following::input[1]";
     public String passWordpath = "//*[text()='Password']//following::input[1]";
     public String conPwdpath = "//*[text()='Password']//following::input[2]";
-
-
+    
 }
 
 

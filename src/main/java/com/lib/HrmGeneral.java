@@ -86,12 +86,7 @@ public class HrmGeneral extends HrmGlobal {
         driver.findElement(By.xpath(userRolepath)).click();
         Thread.sleep(2000);
 
-        Actions act = new Actions(driver);
-        act.keyDown(Keys.ARROW_DOWN).perform();
-        if (status == "ESS") {
-            act.keyDown(Keys.ARROW_DOWN).perform();
-        }
-        act.keyDown(Keys.TAB).perform();
+        driver.findElement(By.xpath(String.format(selectionPath,urole))).click();
         Thread.sleep(2000);
 
         WebElement element1 = driver.findElement(By.xpath(eNamepath));
@@ -103,11 +98,8 @@ public class HrmGeneral extends HrmGlobal {
 
         driver.findElement(By.xpath(statpath)).click();
         Thread.sleep(2000);
-        act.keyDown(Keys.ARROW_DOWN).perform();
-        if (urole == "Disabled") {
-            act.keyDown(Keys.ARROW_DOWN).perform();
-        }
-        act.keyDown(Keys.TAB).perform();
+        driver.findElement(By.xpath(String.format(selectionPath,status))).click();
+
         Thread.sleep(2000);
 
 
