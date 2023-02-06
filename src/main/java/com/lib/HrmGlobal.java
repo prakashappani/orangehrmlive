@@ -31,11 +31,11 @@ public class HrmGlobal {
     public String addbtn = "//button[@class='oxd-button oxd-button--medium oxd-button--secondary']";
 
     //objects AddUser
-    public String userRolepath = "//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div/form/div[1]/div/div[1]/div/div[2]/div/div";
+    public String userRolepath = "(//div[@class='oxd-select-text-input'])[1]";
     public String selectionPath = "//span[contains(text(),'%s')]";
     public String eNamepath  = "//*[text()='Employee Name']//following::input[1]";
     public String eNamepathDropdownPath  = "//div[@class='oxd-autocomplete-dropdown --positon-bottom']";
-    public String statpath = "//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div/form/div[1]/div/div[3]/div/div[2]/div/div/div[2]/i";
+    public String statpath = "(//div[@class='oxd-select-text-input'])[2]";
     public String userNamePath = "//*[text()='Username']//following::input[1]";
     public String passWordpath = "//*[text()='Password']//following::input[1]";
     public String conPwdpath = "//*[text()='Password']//following::input[2]";

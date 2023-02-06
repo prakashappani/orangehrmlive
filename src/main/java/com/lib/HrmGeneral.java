@@ -89,8 +89,8 @@ public class HrmGeneral extends HrmGlobal {
         driver.findElement(By.xpath(String.format(selectionPath,urole))).click();
         Thread.sleep(2000);
 
-        WebElement element1 = driver.findElement(By.xpath(eNamepath));
-        element1.sendKeys(empname);
+        driver.findElement(By.xpath(eNamepath)).clear();
+        driver.findElement(By.xpath(eNamepath)).sendKeys(empname);
         Thread.sleep(2000);
 
         driver.findElement(By.xpath(eNamepathDropdownPath)).click();
@@ -103,12 +103,15 @@ public class HrmGeneral extends HrmGlobal {
         Thread.sleep(2000);
 
 
+        driver.findElement(By.xpath(userNamePath)).clear();
         driver.findElement(By.xpath(userNamePath)).sendKeys(uName);
         Thread.sleep(2000);
 
+        driver.findElement(By.xpath(passWordpath)).clear();
         driver.findElement(By.xpath(passWordpath)).sendKeys(Passwd);
         Thread.sleep(2000);
 
+        driver.findElement(By.xpath(conPwdpath)).clear();
         driver.findElement(By.xpath(conPwdpath)).sendKeys(Confirmpwd);
         Thread.sleep(2000);
     }
