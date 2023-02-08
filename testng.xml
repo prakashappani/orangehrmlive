@@ -11,6 +11,7 @@
                     <include name="addUserTest"/>
                     <include name="addOneUserTest"/>
                     <include name="addUsersTest"/>
+                    <include name="logout"/>
                 </methods>
             </class>
         </classes>

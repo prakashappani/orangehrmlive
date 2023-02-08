@@ -74,12 +74,16 @@ public class Tc02 {
         hrmGeneral.addUser(urole, empname, status, userName, Passwd, Confirmpwd);
     }
 
+    @Test (priority = 99)
+    public void logout() throws Exception {
+        hrmGeneral.logout();
+    }
+
     /*
     Test case runs at the end of the tests
      */
     @AfterTest
     public void tearDown() throws Exception {
-        hrmGeneral.logout();
         hrmGeneral.closeBrowser();
     }
 

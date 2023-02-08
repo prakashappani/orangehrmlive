@@ -49,7 +49,7 @@ public class HrmGeneral extends HrmGlobal {
 
     public void logout() throws Exception {
         driver.findElement(By.xpath(dropDown)).click();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         driver.findElement(By.linkText(linkLogout)).click();
     }
 
