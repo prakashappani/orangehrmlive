@@ -8,8 +8,8 @@
                     <include name="negativeTest"/>
                     <include name="positiveTest"/>
                     <include name="admintabTest"/>
-                    <include name="addOneUserTest"/>
                     <include name="addUserTest"/>
+                    <include name="addOneUserTest"/>
                     <include name="addUsersTest"/>
                 </methods>
             </class>

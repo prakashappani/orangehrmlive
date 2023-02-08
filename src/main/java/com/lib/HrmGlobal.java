@@ -22,23 +22,23 @@ public class HrmGlobal {
 
     public String txtun = "//input[@name='username']";
     public String txtpwd = "//input[@name='password']";
-    public String btnlogin = "//body/div[@id='app']/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/div[3]/button[1]";
-    public String dropDown = "//header/div[1]/div[2]/ul[1]/li[1]/span[1]/i[1]";
+    public String dropDown = "//i[@class='oxd-icon bi-caret-down-fill oxd-userdropdown-icon']";
     public String linkLogout = "Logout";
 
     //objects
-    public String admintab = "//ul[@class='oxd-main-menu']//li//a[1]";
+    public String admintab = "//span[@class='oxd-text oxd-text--span oxd-main-menu-item--name' and text()='Admin']";
     public String addbtn = "//button[@class='oxd-button oxd-button--medium oxd-button--secondary']";
 
     //objects AddUser
     public String userRolepath = "(//div[@class='oxd-select-text-input'])[1]";
-    public String selectionPath = "//span[contains(text(),'%s')]";
-    public String eNamepath  = "//*[text()='Employee Name']//following::input[1]";
+    public String selectionPath = "//span[contains(text(), '%s')]";
+
+    public String eNamepath  = "//label[text()='Employee Name']//following::input[1]";
     public String eNamepathDropdownPath  = "//div[@class='oxd-autocomplete-dropdown --positon-bottom']";
     public String statpath = "(//div[@class='oxd-select-text-input'])[2]";
-    public String userNamePath = "//*[text()='Username']//following::input[1]";
-    public String passWordpath = "//*[text()='Password']//following::input[1]";
-    public String conPwdpath = "//*[text()='Password']//following::input[2]";
+    public String userNamePath = "//label[text()='Username']//following::input[1]";
+    public String passWordpath = "//label[text()='Password']//following::input[1]";
+    public String conPwdpath = "//label[text()='Password']//following::input[2]";
     
 }
 
