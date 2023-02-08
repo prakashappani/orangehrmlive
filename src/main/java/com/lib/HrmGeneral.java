@@ -3,108 +3,100 @@ package com.lib;
 import jxl.Sheet;
 import jxl.Workbook;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.WebElement;
 
 import java.io.FileInputStream;
-import java.util.List;
-
-import org.openqa.selenium.support.ui.Select;
 
 public class HrmGeneral extends HrmGlobal {
     public void openBrowser() {
-        System.out.println("openBrowser");
+        System.out.println("FROM: openBrowser");
         driver = new ChromeDriver();
         System.setProperty("Webdriver.chrome.driver", "C:\\Selenium\\chrome.exe");
         driver.get(url);
     }
 
     public void closeBrowser() {
-        System.out.println("closeBrowser");
+        System.out.println("FROM: closeBrowser");
         driver.quit();
     }
 
-    public void loginintoapp(String sheetname) throws Exception {
+    public void logintoApp(String sheetname) throws Exception {
         FileInputStream UserFile = new FileInputStream("./Users.xls");
-        userwb = Workbook.getWorkbook(UserFile);
-        Sheet s2 = userwb.getSheet(sheetname);
-        int rows = s2.getRows();
-        for (int i = 1; i < 2; i++) {
-            // String x=s1.getCell(0,i).getContents();
-            userName = s2.getCell(1, i).getContents();
-            passwd = s2.getCell(2, i).getContents();
-            // System.out.print(x+"\t");
-            Thread.sleep(2000);
+        Workbook workbook = Workbook.getWorkbook(UserFile);
+        Sheet s2 = workbook.getSheet(sheetname);
 
-            driver.findElement(By.xpath(txtun)).sendKeys(userName);
-            driver.findElement(By.xpath(txtpwd)).sendKeys(passwd);
-            Thread.sleep(2000);
-            driver.findElement(By.xpath("//button[@type='submit']")).click();
-            System.out.print(userName + "\t");
-            System.out.print(passwd + "\n");
-        }
+        String username = s2.getCell(1, 1).getContents();
+        String password = s2.getCell(2, 1).getContents();
+        logintoApp(username, password);
+    }
+
+    public void logintoApp(String username, String password) throws Exception {
+        Thread.sleep(2000);
+        driver.findElement(By.xpath(username_xPath)).sendKeys(username);
+        Thread.sleep(2000);
+        driver.findElement(By.xpath(password_xPath)).sendKeys(password);
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
     }
 
     public void logout() throws Exception {
         driver.findElement(By.xpath(dropDown)).click();
         Thread.sleep(5000);
-        driver.findElement(By.linkText(linkLogout)).click();
+        driver.findElement(By.linkText(logout_xPath)).click();
     }
 
 
     public void admintab() throws Exception {
-        driver.findElement(By.xpath(admintab)).click();
+        driver.findElement(By.xpath(admintab_xPath)).click();
         Thread.sleep(5000);
-        driver.findElement(By.xpath(addbtn)).click();
+        driver.findElement(By.xpath(addbtn_xPath)).click();
         System.out.println("admintab: admintab");
 
     }
 
     public void addUser(String sheetname) throws Exception {
         FileInputStream UserFile = new FileInputStream("./Users.xls");
-        userwb = Workbook.getWorkbook(UserFile);
-        Sheet s3 = userwb.getSheet(sheetname);
+        Workbook workbook = Workbook.getWorkbook(UserFile);
+        Sheet s3 = workbook.getSheet(sheetname);
 
-        urole = s3.getCell(0, 1).getContents();
-        empname = s3.getCell(1, 1).getContents();
-        status = s3.getCell(2, 1).getContents();
-        uName = s3.getCell(3, 1).getContents();
-        Passwd = s3.getCell(4, 1).getContents();
-        Confirmpwd = s3.getCell(5, 1).getContents();
+        String urole = s3.getCell(0, 1).getContents();
+        String empName = s3.getCell(1, 1).getContents();
+        String status = s3.getCell(2, 1).getContents();
+        String uName = s3.getCell(3, 1).getContents();
+        String password = s3.getCell(4, 1).getContents();
+        String confirmpwd = s3.getCell(5, 1).getContents();
 
-        addUser(urole, empname, status, userName, Passwd, Confirmpwd);
+        addUser(urole, empName, status, uName, password, confirmpwd);
 
     }
     public void addUser(String urole, String empname, String status, String uName, String Passwd, String Confirmpwd) throws Exception {
         Thread.sleep(2000);
 
-        driver.findElement(By.xpath(userRolepath)).click();
+        driver.findElement(By.xpath(userRole_xPath)).click();
         Thread.sleep(2000);
 
-        driver.findElement(By.xpath(String.format(selectionPath,urole))).click();
+        driver.findElement(By.xpath(String.format(userRoleSel_xPath,urole))).click();
 
         Thread.sleep(2000);
 
-        driver.findElement(By.xpath(eNamepath)).sendKeys(empname);
+        driver.findElement(By.xpath(eName_xPath)).sendKeys(empname);
         Thread.sleep(2000);
 
-        driver.findElement(By.xpath(eNamepathDropdownPath)).click();
+        driver.findElement(By.xpath(eNameDropdown_xPath)).click();
         Thread.sleep(2000);
 
-        driver.findElement(By.xpath(statpath)).click();
+        driver.findElement(By.xpath(status_xPath)).click();
         Thread.sleep(2000);
-        driver.findElement(By.xpath(String.format(selectionPath,status))).click();
-        Thread.sleep(2000);
-
-        driver.findElement(By.xpath(userNamePath)).sendKeys(uName);
+        driver.findElement(By.xpath(String.format(userRoleSel_xPath,status))).click();
         Thread.sleep(2000);
 
-        driver.findElement(By.xpath(passWordpath)).sendKeys(Passwd);
+        driver.findElement(By.xpath(userName_xPath)).sendKeys(uName);
         Thread.sleep(2000);
 
-        driver.findElement(By.xpath(conPwdpath)).sendKeys(Confirmpwd);
+        driver.findElement(By.xpath(passWord_xPath)).sendKeys(Passwd);
+        Thread.sleep(2000);
+
+        driver.findElement(By.xpath(confirm_Pass_xPath)).sendKeys(Confirmpwd);
         Thread.sleep(2000);
     }
 

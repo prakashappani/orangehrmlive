@@ -22,14 +22,26 @@ public class Tc02 {
         hrmGeneral.openBrowser();
     }
 
-    @Test
-    public void negativeTest() throws Exception {
-        hrmGeneral.loginintoapp("Negative");
+    @DataProvider(name = "createDataNegativeTest")
+    public Object[][] createDataNegativeTest() throws Exception {
+        FileInputStream UserFile = new FileInputStream("./Users.xls");
+        Workbook userwb = Workbook.getWorkbook(UserFile);
+        Sheet sheet = userwb.getSheet("Negative");
+        Object[][] data = new Object[2][2];
+        for (int row = 0; row < 2; row++) {
+            data[row][0] = sheet.getCell(1, row + 1).getContents();
+            data[row][1] = sheet.getCell(2, row + 1).getContents();
+        }
+        return data;
+    }
+    @Test(dataProvider = "createDataNegativeTest")
+    public void negativeTest(String username, String password) throws Exception {
+        hrmGeneral.logintoApp(username, password);
     }
 
     @Test(dependsOnMethods = "negativeTest")
     public void positiveTest() throws Exception {
-        hrmGeneral.loginintoapp("Positive");
+        hrmGeneral.logintoApp("Positive");
         Thread.sleep(5000);
     }
 
@@ -74,7 +86,7 @@ public class Tc02 {
         hrmGeneral.addUser(urole, empname, status, userName, Passwd, Confirmpwd);
     }
 
-    @Test (priority = 99)
+    @Test(priority = 99)
     public void logout() throws Exception {
         hrmGeneral.logout();
     }
