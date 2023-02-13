@@ -1,12 +1,11 @@
 package com.lib;
 
 
-import jxl.Workbook;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 
-public class HrmGlobal {
-    public WebDriver driver;
+public interface HrmGlobal {
     public String url = "https://opensource-demo.orangehrmlive.com/";
 
     //Object xPaths

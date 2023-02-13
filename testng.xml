@@ -3,7 +3,7 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="orangehrmlive">
         <classes>
-            <class name="com.testscripts.Tc02">
+            <class name="com.testscripts.HRMAdmin">
                 <methods>
                     <include name="negativeTest"/>
                     <include name="positiveTest"/>

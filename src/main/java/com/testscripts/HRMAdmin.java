@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import java.io.FileInputStream;
 
-public class Tc02 {
+public class HRMAdmin {
     HrmGeneral hrmGeneral;
 
     /*

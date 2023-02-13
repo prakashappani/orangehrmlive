@@ -7,11 +7,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.io.FileInputStream;
 
-public class HrmGeneral extends HrmGlobal {
+public class HrmGeneral extends  DriverBase implements HrmGlobal  {
     public void openBrowser() {
         System.out.println("FROM: openBrowser");
-        driver = new ChromeDriver();
-        System.setProperty("Webdriver.chrome.driver", "C:\\Selenium\\chrome.exe");
         driver.get(url);
     }
 
