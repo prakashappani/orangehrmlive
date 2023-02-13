@@ -12,16 +12,14 @@ import org.testng.annotations.Test;
 import java.io.FileInputStream;
 
 public class HRMAdmin {
-    HrmGeneral hrmGeneral;
-    HRMAdminGeneral hrmAdminGeneral;
+    HrmGeneral hrmGeneral = new HrmGeneral();
+    HRMAdminGeneral hrmAdminGeneral = new HRMAdminGeneral();
 
     /*
     Test case runs at the beginning of the tests
      */
     @BeforeTest
     public void setUp() {
-        hrmGeneral = new HrmGeneral();
-        hrmAdminGeneral = new HRMAdminGeneral();
         hrmGeneral.openBrowser();
     }
 
