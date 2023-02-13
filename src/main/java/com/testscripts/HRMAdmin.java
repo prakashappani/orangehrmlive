@@ -1,5 +1,6 @@
 package com.testscripts;
 
+import com.lib.HRMAdminGeneral;
 import com.lib.HrmGeneral;
 import jxl.Sheet;
 import jxl.Workbook;
@@ -12,6 +13,7 @@ import java.io.FileInputStream;
 
 public class HRMAdmin {
     HrmGeneral hrmGeneral;
+    HRMAdminGeneral hrmAdminGeneral;
 
     /*
     Test case runs at the beginning of the tests
@@ -19,6 +21,7 @@ public class HRMAdmin {
     @BeforeTest
     public void setUp() {
         hrmGeneral = new HrmGeneral();
+        hrmAdminGeneral = new HRMAdminGeneral();
         hrmGeneral.openBrowser();
     }
 
@@ -48,17 +51,17 @@ public class HRMAdmin {
 
     @Test(dependsOnMethods = "positiveTest")
     public void admintabTest() throws Exception {
-        hrmGeneral.admintab();
+        hrmAdminGeneral.admintab();
     }
 
     @Test(dependsOnMethods = "admintabTest")
     public void addUserTest() throws Exception {
-        hrmGeneral.addUser("Admin");
+        hrmAdminGeneral.addUser("Admin");
     }
 
     @Test(dependsOnMethods = {"admintabTest"})
     public void addOneUserTest() throws Exception {
-        hrmGeneral.addUser("Admin", "Paul Collings", "Enabled", "pappani", "Abcd_1234", "Abcd_1234");
+        hrmAdminGeneral.addUser("Admin", "Paul Collings", "Enabled", "pappani", "Abcd_1234", "Abcd_1234");
     }
 
     /*
@@ -83,7 +86,7 @@ public class HRMAdmin {
     */
     @Test(dataProvider = "createUsers", dependsOnMethods = {"admintabTest"})
     public void addUsersTest(String urole, String empname, String status, String userName, String Passwd, String Confirmpwd) throws Exception {
-        hrmGeneral.addUser(urole, empname, status, userName, Passwd, Confirmpwd);
+        hrmAdminGeneral.addUser(urole, empname, status, userName, Passwd, Confirmpwd);
     }
 
     @Test(priority = 99)
