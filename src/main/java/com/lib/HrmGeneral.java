@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.io.FileInputStream;
 
-public class HrmGeneral extends  DriverBase implements HrmGlobal  {
+public class HrmGeneral extends DriverBase implements HrmGlobal {
     public void openBrowser() {
         System.out.println("FROM: openBrowser");
         driver.get(url);
@@ -29,17 +29,13 @@ public class HrmGeneral extends  DriverBase implements HrmGlobal  {
     }
 
     public void logintoApp(String username, String password) throws Exception {
-        Thread.sleep(2000);
         driver.findElement(By.xpath(username_xPath)).sendKeys(username);
-        Thread.sleep(2000);
         driver.findElement(By.xpath(password_xPath)).sendKeys(password);
-        Thread.sleep(2000);
         driver.findElement(By.xpath("//button[@type='submit']")).click();
     }
 
     public void logout() throws Exception {
         driver.findElement(By.xpath(dropDown)).click();
-        Thread.sleep(5000);
         driver.findElement(By.linkText(logout_xPath)).click();
     }
 

@@ -18,7 +18,6 @@ public class HRMLeaves {
     @Test
     public void positiveTest() throws Exception {
         hrmGeneral.logintoApp("Positive");
-        Thread.sleep(5000);
     }
 
     @Test(dependsOnMethods = "positiveTest")

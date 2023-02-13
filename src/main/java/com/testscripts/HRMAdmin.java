@@ -43,7 +43,6 @@ public class HRMAdmin {
     @Test(dependsOnMethods = "negativeTest")
     public void positiveTest() throws Exception {
         hrmGeneral.logintoApp("Positive");
-        Thread.sleep(5000);
     }
 
 

@@ -5,5 +5,5 @@ public interface HrmLeaveVariables {
     String fromData_xPath = "//*[text()='From Date']//following::input[1]";
     String fromDateToday_xPath = "//div[@class='oxd-date-input-link --today' and text()='Today']";
     String toDate_xPath = "//*[text()='From Date']//following::input[2]";
-    String toDateSelection_xPath = "//div[@class='oxd-calendar-date --selected' and text()='31']";
+    String toDateSelection_xPath = "//div[text()='28']";
 }
