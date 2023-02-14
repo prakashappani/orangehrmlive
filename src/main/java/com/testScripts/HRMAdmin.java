@@ -1,27 +1,15 @@
 package com.testScripts;
 
 import com.lib.HRMAdminGeneral;
-import com.lib.HrmGlobalGeneral;
 import jxl.Sheet;
 import jxl.Workbook;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.io.FileInputStream;
 
-public class HRMAdmin {
-    HrmGlobalGeneral hrmGeneral = new HrmGlobalGeneral();
+public class HRMAdmin extends BaseTest{
     HRMAdminGeneral hrmAdminGeneral = new HRMAdminGeneral();
-
-    /*
-    Test case runs at the beginning of the tests
-     */
-    @BeforeTest
-    public void setUp() {
-        hrmGeneral.openBrowser();
-    }
 
     @DataProvider(name = "createDataNegativeTest")
     public Object[][] createDataNegativeTest() throws Exception {
@@ -91,12 +79,7 @@ public class HRMAdmin {
         hrmGeneral.logout();
     }
 
-    /*
-    Test case runs at the end of the tests
-     */
-    @AfterTest
-    public void tearDown() throws Exception {
-        hrmGeneral.closeBrowser();
-    }
+
+
 
 }

@@ -1,19 +1,10 @@
 package com.testScripts;
 
-import com.lib.HrmGlobalGeneral;
 import com.lib.HRMLeaveGeneral;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class HRMLeaves {
-    HrmGlobalGeneral hrmGeneral = new HrmGlobalGeneral();
+public class HRMLeaves extends BaseTest{
     HRMLeaveGeneral hrmLeaveGeneral = new HRMLeaveGeneral();
-
-    @BeforeTest
-    public void setUp() {
-        hrmGeneral.openBrowser();
-    }
 
     @Test
     public void loginAppTest() throws Exception {
@@ -30,11 +21,4 @@ public class HRMLeaves {
         hrmGeneral.logout();
     }
 
-    /*
-    Test case runs at the end of the tests
-     */
-    @AfterTest
-    public void tearDown() throws Exception {
-        hrmGeneral.closeBrowser();
-    }
 }
