@@ -1,7 +1,7 @@
 package com.testscripts;
 
 import com.lib.HRMAdminGeneral;
-import com.lib.HrmGeneral;
+import com.lib.HrmGlobalGeneral;
 import jxl.Sheet;
 import jxl.Workbook;
 import org.testng.annotations.AfterTest;
@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 import java.io.FileInputStream;
 
 public class HRMAdmin {
-    HrmGeneral hrmGeneral = new HrmGeneral();
+    HrmGlobalGeneral hrmGeneral = new HrmGlobalGeneral();
     HRMAdminGeneral hrmAdminGeneral = new HRMAdminGeneral();
 
     /*
@@ -48,7 +48,7 @@ public class HRMAdmin {
 
     @Test(dependsOnMethods = "positiveTest")
     public void admintabTest() throws Exception {
-        hrmAdminGeneral.admintab();
+        hrmAdminGeneral.adminTab();
     }
 
     @Test(dependsOnMethods = "admintabTest")

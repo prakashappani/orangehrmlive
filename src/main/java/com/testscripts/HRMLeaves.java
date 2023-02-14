@@ -1,13 +1,13 @@
 package com.testscripts;
 
-import com.lib.HrmGeneral;
+import com.lib.HrmGlobalGeneral;
 import com.lib.HRMLeaveGeneral;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class HRMLeaves {
-    HrmGeneral hrmGeneral = new HrmGeneral();
+    HrmGlobalGeneral hrmGeneral = new HrmGlobalGeneral();
     HRMLeaveGeneral hrmLeaveGeneral = new HRMLeaveGeneral();
 
     @BeforeTest

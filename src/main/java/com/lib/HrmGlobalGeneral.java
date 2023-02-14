@@ -3,14 +3,13 @@ package com.lib;
 import jxl.Sheet;
 import jxl.Workbook;
 import org.openqa.selenium.By;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.io.FileInputStream;
 
-public class HrmGeneral extends DriverBase implements HrmGlobal {
+public class HrmGlobalGeneral extends DriverBase implements HrmGlobalVariables {
     public void openBrowser() {
         System.out.println("FROM: openBrowser");
-        driver.get(url);
+        driver.get(baseURL);
     }
 
     public void closeBrowser() {
@@ -31,11 +30,11 @@ public class HrmGeneral extends DriverBase implements HrmGlobal {
     public void logintoApp(String username, String password) throws Exception {
         driver.findElement(By.xpath(username_xPath)).sendKeys(username);
         driver.findElement(By.xpath(password_xPath)).sendKeys(password);
-        driver.findElement(By.xpath("//button[@type='submit']")).click();
+        driver.findElement(By.xpath(login_xPath)).click();
     }
 
     public void logout() throws Exception {
-        driver.findElement(By.xpath(dropDown)).click();
+        driver.findElement(By.xpath(dropDown_xPath)).click();
         driver.findElement(By.linkText(logout_xPath)).click();
     }
 
