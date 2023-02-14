@@ -1,8 +1,8 @@
 package com.testScripts;
 
 import com.lib.HrmGlobalGeneral;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
 
 public class BaseTest {
     HrmGlobalGeneral hrmGeneral = new HrmGlobalGeneral();
@@ -10,7 +10,7 @@ public class BaseTest {
     /*
     Test case runs at the beginning of the tests
      */
-    @BeforeTest
+    @BeforeSuite
     public void setUp() {
         hrmGeneral.openBrowser();
     }
@@ -18,7 +18,7 @@ public class BaseTest {
     /*
      Test case runs at the end of the tests
       */
-    @AfterTest
+    @AfterSuite
     public void tearDown() throws Exception {
         hrmGeneral.closeBrowser();
     }

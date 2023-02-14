@@ -79,7 +79,4 @@ public class HRMAdmin extends BaseTest{
         hrmGeneral.logout();
     }
 
-
-
-
 }
