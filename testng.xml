@@ -3,22 +3,22 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="orangehrmlive">
         <classes>
-            <class name="com.testscripts.HRMAdmin">
+            <class name="com.testScripts.HRMAdmin">
                 <methods>
                     <include name="negativeTest"/>
-                    <include name="positiveTest"/>
-                    <include name="admintabTest"/>
+                    <include name="loginAppTest"/>
+                    <include name="adminTabTest"/>
                     <include name="addUserTest"/>
                     <include name="addOneUserTest"/>
                     <include name="addUsersTest"/>
-                    <include name="logout"/>
+                    <include name="logoutTest"/>
                 </methods>
             </class>
-            <class name="com.testscripts.HRMLeaves">
+            <class name="com.testScripts.HRMLeaves">
                 <methods>
-                    <include name="positiveTest"/>
-                    <include name="leaveSearch"/>
-                    <include name="logout"/>
+                    <include name="loginAppTest"/>
+                    <include name="leaveSearchTest"/>
+                    <include name="logoutTest"/>
                 </methods>
             </class>
         </classes>

@@ -1,4 +1,4 @@
-package com.testscripts;
+package com.testScripts;
 
 import com.lib.HrmGlobalGeneral;
 import com.lib.HRMLeaveGeneral;
@@ -21,7 +21,7 @@ public class HRMLeaves {
     }
 
     @Test(dependsOnMethods = "positiveTest")
-    public void leaveSearch() throws InterruptedException {
+    public void leaveSearchTest() throws InterruptedException {
         hrmLeaveGeneral.addLeave();
     }
 

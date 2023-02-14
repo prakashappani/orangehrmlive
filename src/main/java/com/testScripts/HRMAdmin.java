@@ -1,4 +1,4 @@
-package com.testscripts;
+package com.testScripts;
 
 import com.lib.HRMAdminGeneral;
 import com.lib.HrmGlobalGeneral;
@@ -41,22 +41,22 @@ public class HRMAdmin {
     }
 
     @Test(dependsOnMethods = "negativeTest")
-    public void positiveTest() throws Exception {
+    public void loginAppTest() throws Exception {
         hrmGeneral.logintoApp("Positive");
     }
 
 
-    @Test(dependsOnMethods = "positiveTest")
-    public void admintabTest() throws Exception {
+    @Test(dependsOnMethods = "loginAppTest")
+    public void adminTabTest() throws Exception {
         hrmAdminGeneral.adminTab();
     }
 
-    @Test(dependsOnMethods = "admintabTest")
+    @Test(dependsOnMethods = "adminTabTest")
     public void addUserTest() throws Exception {
         hrmAdminGeneral.addUser("Admin");
     }
 
-    @Test(dependsOnMethods = {"admintabTest"})
+    @Test(dependsOnMethods = {"adminTabTest"})
     public void addOneUserTest() throws Exception {
         hrmAdminGeneral.addUser("Admin", "Paul Collings", "Enabled", "pappani", "Abcd_1234", "Abcd_1234");
     }
@@ -81,13 +81,13 @@ public class HRMAdmin {
     /*
     Test Class which uses Data Provider
     */
-    @Test(dataProvider = "createUsers", dependsOnMethods = {"admintabTest"})
+    @Test(dataProvider = "createUsers", dependsOnMethods = {"adminTabTest"})
     public void addUsersTest(String urole, String empname, String status, String userName, String Passwd, String Confirmpwd) throws Exception {
         hrmAdminGeneral.addUser(urole, empname, status, userName, Passwd, Confirmpwd);
     }
 
     @Test(priority = 99)
-    public void logout() throws Exception {
+    public void logoutTest() throws Exception {
         hrmGeneral.logout();
     }
 
