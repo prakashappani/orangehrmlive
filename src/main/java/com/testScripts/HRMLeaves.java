@@ -16,17 +16,17 @@ public class HRMLeaves {
     }
 
     @Test
-    public void positiveTest() throws Exception {
+    public void loginAppTest() throws Exception {
         hrmGeneral.logintoApp("Positive");
     }
 
-    @Test(dependsOnMethods = "positiveTest")
+    @Test(dependsOnMethods = "loginAppTest")
     public void leaveSearchTest() throws InterruptedException {
         hrmLeaveGeneral.addLeave();
     }
 
     @Test(priority = 99)
-    public void logout() throws Exception {
+    public void logoutTest() throws Exception {
         hrmGeneral.logout();
     }
 
