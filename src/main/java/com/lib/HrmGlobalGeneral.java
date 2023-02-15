@@ -31,12 +31,9 @@ public class HrmGlobalGeneral extends DriverBase implements HrmGlobalVariables {
     public void logout() throws Exception {
         driver.findElement(By.xpath(dropDown_xPath)).click();
 
-        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
-        WebElement element = wait.until(ExpectedConditions
-                .presenceOfElementLocated(By.xpath(dropDown_xPath)));
-        element.click();
-
-        driver.findElement(By.linkText(logout_xPath)).click();
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(20));
+        WebElement webElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText(logout_xPath)));
+        webElement.click();
     }
 
 }
