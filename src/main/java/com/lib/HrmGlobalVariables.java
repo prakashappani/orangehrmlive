@@ -2,7 +2,6 @@ package com.lib;
 
 
 public interface HrmGlobalVariables {
-    public String baseURL = "https://opensource-demo.orangehrmlive.com/";
     public String username_xPath = "//input[@name='username']";
     public String password_xPath = "//input[@name='password']";
     public String login_xPath = "//button[@type='submit']";

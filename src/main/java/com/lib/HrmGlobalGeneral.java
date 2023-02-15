@@ -3,19 +3,14 @@ package com.lib;
 import jxl.Sheet;
 import jxl.Workbook;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.FileInputStream;
+import java.time.Duration;
 
 public class HrmGlobalGeneral extends DriverBase implements HrmGlobalVariables {
-    public void openBrowser() {
-        System.out.println("FROM: openBrowser");
-        driver.get(baseURL);
-    }
-
-    public void closeBrowser() {
-        System.out.println("FROM: closeBrowser");
-        driver.quit();
-    }
 
     public void logintoApp(String sheetname) throws Exception {
         FileInputStream UserFile = new FileInputStream("./Users.xls");
@@ -35,6 +30,12 @@ public class HrmGlobalGeneral extends DriverBase implements HrmGlobalVariables {
 
     public void logout() throws Exception {
         driver.findElement(By.xpath(dropDown_xPath)).click();
+
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+        WebElement element = wait.until(ExpectedConditions
+                .presenceOfElementLocated(By.xpath(dropDown_xPath)));
+        element.click();
+
         driver.findElement(By.linkText(logout_xPath)).click();
     }
 

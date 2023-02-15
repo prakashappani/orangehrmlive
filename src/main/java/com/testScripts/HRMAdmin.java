@@ -1,6 +1,8 @@
 package com.testScripts;
 
 import com.lib.HRMAdminGeneral;
+import com.lib.HrmGlobalGeneral;
+
 import jxl.Sheet;
 import jxl.Workbook;
 import org.testng.annotations.DataProvider;
@@ -10,6 +12,7 @@ import java.io.FileInputStream;
 
 public class HRMAdmin extends BaseTest{
     HRMAdminGeneral hrmAdminGeneral = new HRMAdminGeneral();
+    HrmGlobalGeneral hrmGeneral = new HrmGlobalGeneral();
 
     @DataProvider(name = "createDataNegativeTest")
     public Object[][] createDataNegativeTest() throws Exception {

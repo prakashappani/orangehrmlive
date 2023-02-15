@@ -10,8 +10,6 @@ public class HRMAdminGeneral extends DriverBase implements HRMAdminVariables {
     public void adminTab() throws Exception {
         driver.findElement(By.xpath(admintab_xPath)).click();
         driver.findElement(By.xpath(addbtn_xPath)).click();
-        System.out.println("admintab: admintab");
-
     }
 
     public void addUser(String sheetname) throws Exception {
