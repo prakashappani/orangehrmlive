@@ -8,6 +8,7 @@
 * Reusable methods
 * Test classification based on the pages
 * Reading from an Excel file
+* Implicit/Explicit wait
 
 **Java**
 * Inheritance from Base Test
