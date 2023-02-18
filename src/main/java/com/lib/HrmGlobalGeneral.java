@@ -22,13 +22,13 @@ public class HrmGlobalGeneral extends DriverBase implements HrmGlobalVariables {
         logintoApp(username, password);
     }
 
-    public void logintoApp(String username, String password) throws Exception {
+    public void logintoApp(String username, String password) {
         driver.findElement(By.xpath(username_xPath)).sendKeys(username);
         driver.findElement(By.xpath(password_xPath)).sendKeys(password);
         driver.findElement(By.xpath(login_xPath)).click();
     }
 
-    public void logout() throws Exception {
+    public void logout()  {
         driver.findElement(By.xpath(dropDown_xPath)).click();
 
         WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(20));
