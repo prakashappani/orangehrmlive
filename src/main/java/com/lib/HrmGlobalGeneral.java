@@ -35,7 +35,12 @@ public class HrmGlobalGeneral extends DriverBase implements HrmGlobalVariables {
         WebElement webElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText(logout_xPath)));
         webElement.click();
     }
-
+    public void setUp() {
+        driver.get(baseURL);
+    }
+    public void tearDown()  {
+        driver.quit();
+    }
 }
 	
 

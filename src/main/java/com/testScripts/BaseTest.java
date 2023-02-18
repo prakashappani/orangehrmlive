@@ -5,26 +5,15 @@ import com.lib.HrmGlobalGeneral;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
-public class BaseTest extends DriverBase {
-    public String baseURL = "https://opensource-demo.orangehrmlive.com/";
-    BaseTest(){
-        super();
-    }
-    /*
-    Test case runs at the beginning of the tests
-     */
+public class BaseTest {
+
+    HrmGlobalGeneral hrmGeneral = new HrmGlobalGeneral();
     @BeforeSuite
     public void setUp() {
-        driver.get(baseURL);
-
+        hrmGeneral.setUp();
     }
-
-    /*
-     Test case runs at the end of the tests
-      */
     @AfterSuite
     public void tearDown() throws Exception {
-        driver.quit();
-
+        hrmGeneral.tearDown();
     }
 }
