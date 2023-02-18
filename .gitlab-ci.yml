@@ -1,0 +1,20 @@
+image: selenium/standalone-chrome
+
+cache:
+  paths:
+    - .m2/repository
+
+stages:          # List of stages for jobs, and their order of execution
+  - test
+
+
+UI-test-job:   # This job runs in the test stage.
+  stage: test    # It only starts when the job in the build stage completes successfully.
+  script:
+    - java -version
+    - sudo apt-get update
+    - sudo apt-get -yq install maven
+    - mvn -version
+    - echo "Running unit tests..."
+    - echo $CI_PROJECT_DIR
+    - mvn -Djava.awt.headless=true -Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository install
