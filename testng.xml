@@ -27,4 +27,10 @@
             </class>
         </classes>
     </test>
+    <test verbose="2" preserve-order="true" name="OrangeHRM Tests Using Cucumber">
+        <classes>
+            <class name="com.cucumber.testRunner.CucumberTestRunner">
+            </class>
+        </classes>
+    </test>
 </suite>

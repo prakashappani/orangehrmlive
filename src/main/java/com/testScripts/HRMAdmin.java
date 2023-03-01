@@ -5,6 +5,8 @@ import com.lib.HrmGlobalGeneral;
 
 import jxl.Sheet;
 import jxl.Workbook;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -81,5 +83,4 @@ public class HRMAdmin extends BaseTest{
     public void logoutTest() throws Exception {
         hrmGeneral.logout();
     }
-
 }

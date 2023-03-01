@@ -14,7 +14,7 @@ public class DriverBase {
     String headless = System.getProperty("headless");
     ChromeOptions options = new ChromeOptions();
 
-    DriverBase() {
+    public DriverBase() {
         if (driver == null) {
             if (headless != null && headless.equals("true")) {
                 System.out.println(headless);
@@ -23,7 +23,7 @@ public class DriverBase {
             driver = new ChromeDriver(options);
 //            System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chrome.exe");
 //            driver.manage().window().maximize();
-            driver.manage().window().setSize(new Dimension(1920,1080));
+            driver.manage().window().setSize(new Dimension(1920, 1080));
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         }
     }

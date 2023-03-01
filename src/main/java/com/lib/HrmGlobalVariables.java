@@ -8,6 +8,7 @@ public interface HrmGlobalVariables {
     public String login_xPath = "//button[@type='submit']";
     public String dropDown_xPath = "//i[@class='oxd-icon bi-caret-down-fill oxd-userdropdown-icon']";
     public String logout_xPath = "Logout";
+    public String invalid_credentials ="//*[text()='Invalid credentials']";
 
 }
 
